@@ -1,9 +1,42 @@
 const emailFormatter = (email) => {
+  const invalidStartChars = [
+    "*",
+    ".",
+    "@",
+    "!",
+    "^",
+    "&",
+    "$",
+    "#",
+    "(",
+    ")",
+    "+",
+    "-",
+    ",",
+    ";",
+    ":",
+    "'",
+    '"',
+    "/",
+    "[",
+    "]",
+    "|",
+    "`",
+    "~",
+    "?",
+    ">",
+    "<",
+    "{",
+    "}",
+  ];
   let result = "";
   if (typeof email !== "string") {
     result = "Bukan email";
   } else {
     if (
+      // cek kevalidan char pertama
+      invalidStartChars.includes(email[0]) ||
+      // kalau sebelum @ tidak ada karakter
       !email.split("@")[0] ||
       // kalau ga ada @
       !email.includes("@") ||
