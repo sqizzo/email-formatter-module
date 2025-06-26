@@ -1,12 +1,12 @@
 {
   "name": "email-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "modul kelompok masih mikir",
   "main": "index.js",
   "scripts": {
     "watch": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "masihmikir",
+  "author": "masihmikir(rasya)",
   "license": "ISC"
 }
