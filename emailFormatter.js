@@ -4,8 +4,12 @@ const emailFormatter = (email) => {
     result = "Bukan email";
   } else {
     if (
+      !email.split("@")[0] ||
+      // kalau ga ada @
       !email.includes("@") ||
+      // kalau ga ada domain setelah @
       !email.split("@")[1] ||
+      // kalau ga ada .com/.net
       !email.split("@")[1].split(".")[1]
     ) {
       result = "Bukan email";
@@ -20,6 +24,7 @@ const emailFormatter = (email) => {
   return result;
 };
 
+// buat ngecek jumlah star berdasarkan karakter setelah karakter pertama
 const maskstar = (length) => {
   let arr = "";
   for (let i = 0; i < length - 1; i++) {

@@ -1,3 +1,3 @@
 const emailFormatter = require("./emailFormatter");
 
-console.log(emailFormatter("a@b.com"));
+console.log("result =", emailFormatter("baihaqimnb@gmail.com"));
