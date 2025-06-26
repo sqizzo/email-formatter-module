@@ -1,25 +1,26 @@
 const emailFormatter = (email) => {
+  let result = "";
   if (typeof email !== "string") {
-    console.log("Bukan string!");
+    result = "Bukan email";
   } else {
     if (
       !email.includes("@") ||
       !email.split("@")[1] ||
       !email.split("@")[1].split(".")[1]
     ) {
-      console.log("Bukan email!");
+      result = "Bukan email";
     } else {
       const split = email.split("@");
-      console.log(
-        `${split[0].length === 1 ? "*" : split[0][0]}${
-          split[0].length === 1 ? "" : star(split[0].length)
-        }@${split[1]}`
-      );
+      result = `${split[0].length === 1 ? "*" : split[0][0]}${
+        split[0].length === 1 ? "" : maskstar(split[0].length)
+      }@${split[1]}`;
     }
   }
+
+  return result;
 };
 
-const star = (length) => {
+const maskstar = (length) => {
   let arr = "";
   for (let i = 0; i < length - 1; i++) {
     arr += "*";
